@@ -1,0 +1,17 @@
+{
+  "name": "02-game-from-scratch",
+  "description": "a book about making 2d games with javascript",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/sethvincent/02-game-from-scratch.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "start": ""
+  },
+  "dependencies": {
+    "manuscript-builder": "0.0.3"
+  },
+  "devDependencies": {}
+}
