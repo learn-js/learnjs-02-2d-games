@@ -35,6 +35,7 @@ You'll learn:
 This book is under active development. You'll get all future updates for free!
 
 ### This book is open source
+Contribute errata or content requests at the GitHub repository for this book: [github.com/learn-js/learnjs-02-2d-games](https://github.com/learn-js/learnjs-02-2d-games)
 
 
 # Introduction to the HTML5 canvas tag

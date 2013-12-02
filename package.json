@@ -7,8 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "",
-    "start": ""
+    "build": "node index.js"
   },
   "dependencies": {
     "manuscript-builder": "0.0.3"
