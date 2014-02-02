@@ -1,0 +1,4 @@
+01-introduction.md
+02-intro-to-canvas.md
+03-simple-game-api.md
+04-animation-sequences.md

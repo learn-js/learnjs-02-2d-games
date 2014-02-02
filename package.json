@@ -5,12 +5,14 @@
   "repository": {
     "url": "git://github.com/sethvincent/02-game-from-scratch.git"
   },
-  "main": "index.js",
   "scripts": {
-    "build": "node index.js"
+    "leanpub": "./bin/leanpub",
+    "compile": "./bin/compile",
+    "dist": "./bin/dist"
   },
-  "dependencies": {
-    "manuscript-builder": "0.0.3"
-  },
-  "devDependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "manuscript-builder": "0.0.3",
+    "ebook-convert": "0.0.2"
+  }
 }
