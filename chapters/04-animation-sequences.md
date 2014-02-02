@@ -1,4 +1,4 @@
-# animation sequences with javascript and the canvas
+# Animation sequences with javascript and the canvas
 
 Let’s make some canvas animations happen for a specific amount of time before stopping, or to perform certain movements, then stop.
 
