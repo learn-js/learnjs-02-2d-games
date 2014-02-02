@@ -1,8 +1,8 @@
 # Introduction to making html5/javascript games with Coquette.js
 
-[Coquette]() is a game development library from developer [Mary Rose Cook](). It looks like it was abstracted from her [Ludum Dare 26 entry, Left Right Space]().
+[Coquette](http://coquette.maryrosecook.com/) is a game development library from developer [Mary Rose Cook](https://github.com/maryrosecook). It looks like it was abstracted from her [Ludum Dare 26 entry, *Left Right Space*](https://github.com/maryrosecook/leftrightspace).
 
-I was struck by how straightforward and easy to use Coquette is, and made a weird asteroids-like game over a couple of afternoons: [BlockSnot]().
+I was struck by how straightforward and easy to use Coquette is, and made a weird asteroids-like game over a couple of afternoons: [BlockSnot](https://github.com/sethvincent/BlockSnot/).
 
 ## Let’s take a look at the basics of using Coquette.
 
@@ -229,6 +229,6 @@ From the project readme:
 > “If the main game object or a game entity has an `update()` function, it will get called on each tick. If the main game object or a game entity has a `draw()` function, it will get called on each tick.”
 
 ## Make a game!
-Coquette is an awesome choice for simple 2d games – it would be well-suited to the upcoming Ludum Dare competition.
+Coquette is an awesome choice for simple 2d games – it is well-suited to the use in [Ludum Dare](http://ludumdare.com/compo/) and other game jams.
 
-Take a look at the demos in the Coquette Github repo, and dig around in my BlockSnot game for ideas.
+Take a look at [the demos in the Coquette Github repo](https://github.com/maryrosecook/coquette/tree/master/demos), and [dig around in my BlockSnot game](https://github.com/sethvincent/BlockSnot) for ideas.
