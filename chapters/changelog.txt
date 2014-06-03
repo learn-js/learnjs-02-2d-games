@@ -1,0 +1,15 @@
+# Changelog
+
+## v0.4.0 - June 3, 2014
+- Add an intro to pixi.js chapter
+
+## v0.3.0 - February 3, 2014
+- Add intro to Coquette.js chapter
+- Small typo fixes
+
+## v0.2.0 - December 18, 2013
+- Add chapter about making simplest game API possible
+- Add animation sequences chapter
+
+## v0.1.0 - Nov 4, 2013
+- First chapter: making a game from scratch with the html5 canvas tag

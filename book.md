@@ -2,13 +2,13 @@
 
 ## Thank you
 
-Thank you so much for purchasing Learn.js #2: making 2d games with node.js & browserify!
+Thank you so much for purchasing Making 2D JavaScript Games!
 
-This book is the second in a series about building projects with javascript. Learn more at [learnjs.io](http://learnjs.io).
+This book is part of the Learn.js book series about building projects with javascript. Learn more at [learnjs.io](http://learnjs.io).
 
-If you haven’t already you should sign up for updates to the series and related projects by [subscribing to the Super Big Tree newsletter](http://eepurl.com/rN5Nv).
+If you haven’t already you should sign up for updates to the series and related projects by [subscribing to the Learn.js newsletter](http://eepurl.com/rN5Nv).
 
-Please email me at seth@superbigtree.com with any ideas or questions you have about the book or the series.
+Please email me at hi@learnjs.io with any ideas or questions you have about the book or the series.
 
 ## About the book
 
@@ -21,15 +21,21 @@ Let's use the node.js module system and code patterns to build small, reusable g
 ### The reader
 The ideal reader for this book is someone who likes exploring, imagining, and inventing for themselves. You probably have some experience with javascript already, and you'd like to learn more about animation using the canvas tag, basic game development patterns, and gain intermediate skills in developing javascript modules that can be used on the server and in the browser.
 
-### Goals of the book
-You'll learn:  
-- Basic game development fundamentals.
-- The use of js modules from npm for creating interactive content.
+### With this book you'll learn:  
+- About basic game development fundamentals.
+- How to create a simple game framework from scratch
+- How to use a handful of existing game frameworks & libraries:
+  - Phaser
+  - CraftyJS
+  - melonJS
+  - coquette
+  - crtrdg.js
+- How to use modules from npm to create 2D games
+- Learn intermediate JavaScript patterns
 - How to use the HTML5 canvas tag for animation and user interaction.
-- Using javascript to manipulate html elements.
-- Using javascript for server-side coding.
-- Intermediate node.js module creation and best practices.
-- Using developer tools like Git, GitHub, Chrome Dev Tools, Bower, npm, and Grunt.
+- About using javascript to manipulate html elements.
+- About using javascript for server-side coding.
+
 
 ### Free updates
 This book is under active development. You'll get all future updates for free!
@@ -1250,5 +1256,216 @@ From the project readme:
 Coquette is an awesome choice for simple 2d games – it is well-suited to the use in [Ludum Dare](http://ludumdare.com/compo/) and other game jams.
 
 Take a look at [the demos in the Coquette Github repo](https://github.com/maryrosecook/coquette/tree/master/demos), and [dig around in my BlockSnot game](https://github.com/sethvincent/BlockSnot) for ideas.
+
+
+# Introduction to pixi.js
+
+Pixi.js is a wonderful library dedicated to serving as a fast and simple rendering engine. It can be used with a number of other JavaScript game libraries, and can do both canvas and WebGL rendering.
+
+In this chapter we go through a really simple introduction to using pixi.js. We'll draw a baby zombie image to the screen to show basic usage of the renderer, stage, sprite, and texture functionality of pixi.js.
+
+## Create a project folder
+
+```
+mkdir pixi-intro
+```
+
+### Create a package.json file
+
+```
+npm init
+```
+Answer the prompts from `npm init` and in the end you'll get a package.json file.
+
+
+## Install pixi.js via npm
+
+```
+npm install --save GoodBoyDigital/pixi.js
+```
+
+The version that's published to npm is out of date, so we can install directly from GitGub using the command above. The `--save` option saves pixi.js as a dependency in your package.json file.
+
+## Get an image to use
+
+You can use this baby zombie image if you want:
+
+```
+https://raw.githubusercontent.com/sethvincent/hogjam4/gh-pages/images/menu-image/05.png
+```
+
+Or use whatever image you want.
+
+Just make sure your image is named zombie.png and is placed in the root of your project directory.
+
+## Create an index.js file
+
+```
+touch index.js
+```
+
+## Edit the index.js file
+Let's make a simple example that just draws an image to the screen.
+
+
+### Require pixi.js into your program:
+
+```
+var PIXI = require('pixi.js');
+```
+We're requiring the pixi.js module as `PIXI` because that's how the pixi.js object is capitalized in their documentation.
+
+
+### Create a renderer for the game
+
+```
+var renderer = new PIXI.CanvasRenderer(window.innerWidth, window.innerHeight);
+```
+
+Here we're using pixi's canvas renderer. You can use WebGL really easily. Just use `PIXI.WebGLRenderer` instead. We're making the renderer fill the full width and height of the screen by passing in `window.innerWidth` and `window.innerHeight` as arguments.
+
+### Attach the renderer to the body of the html file
+
+```
+document.body.appendChild(renderer.view);
+```
+
+### Create a stage to draw on.
+
+```
+var stage = new PIXI.Stage;
+```
+
+We'll be drawing our image by adding it as a sprite that is drawn on this stage.
+
+### Create a texture and sprite with an image
+
+```
+var zombieTexture = PIXI.Texture.fromImage('zombie.png');
+var zombie = new PIXI.Sprite(zombieTexture);
+```
+
+First we create a texture using the `PIXI.Texture.fromImage()` method, passing in a relative url to an image as an argument.
+
+Next we create a sprite using the `PIXI.Sprite()` method, and passing in the texture as an argument.
+
+### Set the position of the zombie sprite
+
+```
+zombie.position.x = window.innerWidth / 2 - 150;
+zombie.position.y = window.innerHeight / 2 - 150;
+```
+
+The zombie image is 300 by 300 pixels, so the above code will center the sprite in the middle of the window.
+
+### Add the zombie sprite to the stage
+
+```
+stage.addChild(zombie);
+```
+
+This adds our sprite to the stage so it'll get drawn when the `renderer.render()` method executes.
+
+### Create a draw function to run the renderer
+
+```
+function draw() {
+  renderer.render(stage);
+  requestAnimationFrame(draw);
+}
+```
+
+The above draw function runs the `renderer.render()` method, with the `stage` passed in as an argument. It also runs `requestAnimationFrame` with the `draw()` function itself as the argument, which ensures that `draw()` will run repeatedly as a loop.
+
+### Kick off the application
+
+```
+draw();
+```
+
+We run the `draw()` function for the first time to kick off the game, and because we call `requestAnimationFrame` inside the draw function, it'll get called recursively and run on each frame of `requestAnimationFrame`.
+
+## Full example code
+
+Here's the index.js file in its entirety:
+
+```
+var PIXI = require('pixi.js');
+
+var renderer = new PIXI.CanvasRenderer(window.innerWidth, window.innerHeight);
+
+document.body.appendChild(renderer.view);
+
+var stage = new PIXI.Stage;
+
+var zombieTexture = PIXI.Texture.fromImage('zombie.png');
+var zombie = new PIXI.Sprite(zombieTexture);
+
+zombie.position.x = window.innerWidth / 2 - 150;
+zombie.position.y = window.innerHeight / 2 - 150;
+
+stage.addChild(zombie);
+
+function draw() {
+  renderer.render(stage);
+  requestAnimationFrame(draw);
+}
+
+draw();
+```
+
+## Run a development server
+
+You can run this on your local machine using the `beefy` module to bundle dependencies using Browserify, and serve the files with a development server that has live-reload built in.
+
+### Install beefy and browserify globally
+
+If you haven't already, install beefy and browserify:
+
+```
+npm install -g beefy browserify
+```
+
+### Start the server
+
+Run this to start your development server:
+
+```
+beefy index.js --live
+```
+
+You'll see output like:
+
+```
+listening on http://localhost:9966/
+```
+
+So you'll be able to go to [http://localhost:9966/](http://localhost:9966/) in your browser and see the game running.
+
+
+## Want to learn more?
+
+Makre sure to review the project website: [pixijs.com](http://www.pixijs.com/)
+
+Check out the pixi.js GitHub repository: [github.com/GoodBoyDigital/pixi.js](https://github.com/GoodBoyDigital/pixi.js)
+
+You can read the project's documentation here: [goodboydigital.com/pixijs/docs](http://www.goodboydigital.com/pixijs/docs/)
+
+
+# Changelog
+
+## v0.4.0 - June 3, 2014
+- Add an intro to pixi.js chapter
+
+## v0.3.0 - February 3, 2014
+- Add intro to Coquette.js chapter
+- Small typo fixes
+
+## v0.2.0 - December 18, 2013
+- Add chapter about making simplest game API possible
+- Add animation sequences chapter
+
+## v0.1.0 - Nov 4, 2013
+- First chapter: making a game from scratch with the html5 canvas tag
 
 

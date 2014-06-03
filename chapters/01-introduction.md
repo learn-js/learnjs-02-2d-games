@@ -2,13 +2,13 @@
 
 ## Thank you
 
-Thank you so much for purchasing Learn.js #2: making 2d games with node.js & browserify!
+Thank you so much for purchasing Making 2D JavaScript Games!
 
-This book is the second in a series about building projects with javascript. Learn more at [learnjs.io](http://learnjs.io).
+This book is part of the Learn.js book series about building projects with javascript. Learn more at [learnjs.io](http://learnjs.io).
 
-If you haven’t already you should sign up for updates to the series and related projects by [subscribing to the Super Big Tree newsletter](http://eepurl.com/rN5Nv).
+If you haven’t already you should sign up for updates to the series and related projects by [subscribing to the Learn.js newsletter](http://eepurl.com/rN5Nv).
 
-Please email me at seth@superbigtree.com with any ideas or questions you have about the book or the series.
+Please email me at hi@learnjs.io with any ideas or questions you have about the book or the series.
 
 ## About the book
 
@@ -21,15 +21,21 @@ Let's use the node.js module system and code patterns to build small, reusable g
 ### The reader
 The ideal reader for this book is someone who likes exploring, imagining, and inventing for themselves. You probably have some experience with javascript already, and you'd like to learn more about animation using the canvas tag, basic game development patterns, and gain intermediate skills in developing javascript modules that can be used on the server and in the browser.
 
-### Goals of the book
-You'll learn:  
-- Basic game development fundamentals.
-- The use of js modules from npm for creating interactive content.
+### With this book you'll learn:  
+- About basic game development fundamentals.
+- How to create a simple game framework from scratch
+- How to use a handful of existing game frameworks & libraries:
+  - Phaser
+  - CraftyJS
+  - melonJS
+  - coquette
+  - crtrdg.js
+- How to use modules from npm to create 2D games
+- Learn intermediate JavaScript patterns
 - How to use the HTML5 canvas tag for animation and user interaction.
-- Using javascript to manipulate html elements.
-- Using javascript for server-side coding.
-- Intermediate node.js module creation and best practices.
-- Using developer tools like Git, GitHub, Chrome Dev Tools, Bower, npm, and Grunt.
+- About using javascript to manipulate html elements.
+- About using javascript for server-side coding.
+
 
 ### Free updates
 This book is under active development. You'll get all future updates for free!
