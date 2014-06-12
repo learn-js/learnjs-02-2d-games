@@ -15,7 +15,9 @@
     "crtrdg-entity": "~0.2.0",
     "crtrdg-scene": "~0.1.0",
     "crtrdg-gameloop": "~0.2.0",
-    "crtrdg-keyboard": "0.0.2"
+    "crtrdg-keyboard": "0.0.2",
+    "gameloop-canvas": "^0.3.2",
+    "aabb-2d": "0.0.0"
   },
   "devDependencies": {
     "manuscript-builder": "0.0.3",

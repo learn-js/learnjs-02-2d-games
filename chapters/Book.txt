@@ -4,4 +4,5 @@
 04-animation-sequences.md
 05-intro-to-coquette.md
 06-intro-to-pixi.md
+07-simple-collision-aabb-2d.md
 changelog.txt
