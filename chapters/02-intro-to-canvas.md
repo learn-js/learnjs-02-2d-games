@@ -219,7 +219,7 @@ We don't want the page to scroll when we're moving `box` around, so we need to d
 
 `event.preventDefault()` keeps a key from performing its defualt behavior. We want to be careful how we use `event.preventDefault()` for accessibility and usability reasons. If we disabled all keys that would make normal navigation and keyboard actions impossible.
 
-So we use the `if` statement to check if the keys being pressed are the arrow keys: 37, 38, 39, 49.
+So we use the `if` statement to check if the keys being pressed are the arrow keys: 37, 38, 39, 40.
 
 If the keyCode is 37, 38, 39, or 40, their default behavior is prevented.
 
